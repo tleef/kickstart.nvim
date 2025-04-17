@@ -8,7 +8,6 @@ return {
   require 'custom.plugins.abolish',
   require 'custom.plugins.copilot',
   require 'custom.plugins.oil',
-  require 'custom.plugins.gitsigns',
   require 'custom.plugins.which-key',
   require 'custom.plugins.telescope',
   require 'custom.plugins.lazydev',
@@ -19,4 +18,5 @@ return {
   require 'custom.plugins.todo-comments',
   require 'custom.plugins.mini',
   require 'custom.plugins.nvim-treesitter',
+  require 'kickstart.plugins.gitsigns',
 }

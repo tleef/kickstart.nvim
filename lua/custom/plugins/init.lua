@@ -19,4 +19,5 @@ return {
   require 'custom.plugins.mini',
   require 'custom.plugins.nvim-treesitter',
   require 'kickstart.plugins.gitsigns',
+  require 'kickstart.plugins.autopairs',
 }

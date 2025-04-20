@@ -48,4 +48,4 @@ vim.keymap.set('n', '<M-k>', '<cmd>cprev<CR>zz')
 vim.keymap.set('n', '<M-j>', '<cmd>cnext<CR>zz')
 
 -- Open Oil
-vim.keymap.set('n', '<leader>\\', '<cmd>Oil<CR>')
+vim.keymap.set('n', '<M-\\>', '<cmd>Oil<CR>')

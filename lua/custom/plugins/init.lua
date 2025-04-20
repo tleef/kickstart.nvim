@@ -7,6 +7,7 @@ return {
   require 'custom.plugins.fugitive',
   require 'custom.plugins.abolish',
   require 'custom.plugins.copilot',
+  require 'custom.plugins.copilot-chat',
   require 'custom.plugins.oil',
   require 'custom.plugins.which-key',
   require 'custom.plugins.telescope',

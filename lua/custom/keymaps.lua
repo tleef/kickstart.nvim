@@ -43,9 +43,5 @@ vim.keymap.set('i', '<C-c>', '<Esc>')
 -- Never use Q
 vim.keymap.set('n', 'Q', '<NOP>')
 
--- Quicklist prev and next
-vim.keymap.set('n', '<M-k>', '<cmd>cprev<CR>zz')
-vim.keymap.set('n', '<M-j>', '<cmd>cnext<CR>zz')
-
 -- Open Oil
-vim.keymap.set('n', '<M-\\>', '<cmd>Oil<CR>')
+vim.keymap.set('n', '<M-`>', '<cmd>lua MiniFiles.open()<CR>')

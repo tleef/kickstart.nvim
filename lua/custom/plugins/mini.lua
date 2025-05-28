@@ -27,6 +27,17 @@ return {
     -- - sr)'  - [S]urround [R]eplace [)] [']
     require('mini.surround').setup()
 
+    -- Go forward/backward with square brackets
+    require('mini.bracketed').setup()
+
+    -- Navigate and manipulate file system
+    require('mini.files').setup {
+      windows = {
+        preview = true,
+        width_preview = 80,
+      },
+    }
+
     -- Simple and easy statusline.
     --  You could remove this setup call if you don't like it,
     --  and try some other statusline plugin

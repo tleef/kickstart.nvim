@@ -1,14 +1,24 @@
 -- Collection of various small independent plugins/modules
 return {
   'echasnovski/mini.nvim',
+  dependencies = {
+    'nvim-treesitter/nvim-treesitter-textobjects',
+  },
   config = function()
+    local gen_spec = require('mini.ai').gen_spec
     -- Better Around/Inside textobjects
     --
     -- Examples:
     --  - va)  - [V]isually select [A]round [)]paren
     --  - yinq - [Y]ank [I]nside [N]ext [Q]uote
     --  - ci'  - [C]hange [I]nside [']quote
-    require('mini.ai').setup { n_lines = 500 }
+    require('mini.ai').setup {
+      n_lines = 500,
+      custom_textobjects = {
+        -- Function definition (needs treesitter queries with these captures)
+        F = gen_spec.treesitter { a = '@function.outer', i = '@function.inner' },
+      },
+    }
 
     -- Add/delete/replace surroundings (brackets, quotes, etc.)
     --

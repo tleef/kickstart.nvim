@@ -44,4 +44,4 @@ vim.keymap.set('i', '<C-c>', '<Esc>')
 vim.keymap.set('n', 'Q', '<NOP>')
 
 -- Open Oil
-vim.keymap.set('n', '<M-`>', '<cmd>lua MiniFiles.open()<CR>')
+vim.keymap.set('n', '<M-`>', '<cmd>lua if not MiniFiles.close() then MiniFiles.open() end<CR>')

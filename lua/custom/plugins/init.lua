@@ -1,14 +1,22 @@
--- You can add your own plugins here or in other files in this directory!
---  I promise not to create any merge conflicts in this directory :)
+-- Each file in this directory installs and configures one plugin with `vim.pack`.
 --
--- See the kickstart.nvim README for more information
-
--- Iterate over all Lua files in the plugins directory and load them.
--- `vim.fs.dir()` iteration order is unspecified and must not be relied upon.
-local plugins_dir = vim.fs.joinpath(vim.fn.stdpath 'config', 'lua', 'custom', 'plugins')
-for file_name, type in vim.fs.dir(plugins_dir, { follow = true }) do
-  if (type == 'file' or type == 'link') and file_name:match '%.lua$' and file_name ~= 'init.lua' then
-    local module = file_name:gsub('%.lua$', '')
-    require('custom.plugins.' .. module)
-  end
-end
+-- Files are required explicitly, in order, because `vim.pack` loads plugins
+-- eagerly and some depend on others already being set up:
+--   - tokyonight is loaded early so other plugins pick up its highlights
+--   - mini (mini.icons) is loaded before telescope and oil, which use its icons
+--   - lspconfig sets up mason before conform and blink rely on installed tools
+require 'custom.plugins.guess-indent'
+require 'custom.plugins.fugitive'
+require 'custom.plugins.abolish'
+require 'custom.plugins.gitsigns'
+require 'custom.plugins.which-key'
+require 'custom.plugins.tokyonight'
+require 'custom.plugins.todo-comments'
+require 'custom.plugins.mini'
+require 'custom.plugins.telescope'
+require 'custom.plugins.lspconfig'
+require 'custom.plugins.conform'
+require 'custom.plugins.blink'
+require 'custom.plugins.nvim-treesitter'
+require 'custom.plugins.autopairs'
+require 'custom.plugins.oil'
